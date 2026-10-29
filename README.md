@@ -37,3 +37,105 @@ Formato de cada línea:
 ```
 id;titulo;empresa;estado;fechaPostulacion;enlace;notas
 ```
+
+## Cómo compilar y ejecutar
+
+Hace falta Java 25 o superior y Maven. En la carpeta del proyecto:
+
+```bash
+mvn package
+```
+
+Compila, pasa los tests y crea el archivo `target/tracker-candidaturas.jar`. Después se ejecuta con una operación:
+
+```bash
+java -jar target/tracker-candidaturas.jar -listar
+```
+
+El programa usa el archivo `candidaturas.csv` de la carpeta desde la que se ejecuta. Si no existe, se crea al añadir la primera candidatura.
+
+En IntelliJ también se puede ejecutar la clase `es.tracker.Main` poniendo la operación en *Program arguments*.
+
+## Uso
+
+Cada ejecución hace una sola operación y termina. Si va bien, el programa termina con código 0, y si hay algún error, con código 1.
+
+### Listar
+
+```bash
+java -jar target/tracker-candidaturas.jar -listar
+java -jar target/tracker-candidaturas.jar -listar --estado entrevista
+java -jar target/tracker-candidaturas.jar -listar --empresa indra
+java -jar target/tracker-candidaturas.jar -listar --estado pendiente --empresa accenture
+```
+
+La empresa se busca por una parte del nombre y sin distinguir mayúsculas. Ejemplo de salida:
+
+```
+ID   TÍTULO                         EMPRESA              ESTADO      FECHA
+2    Programador Backend            Accenture            entrevista  05/08/2026
+5    Prácticas DAM                  Indra                entrevista  20/08/2026
+7    Desarrollador Android          Telefónica           entrevista  01/09/2026
+14   Programador Junior             Capgemini            entrevista  15/10/2026
+4 candidatura(s).
+```
+
+### Añadir
+
+```bash
+java -jar target/tracker-candidaturas.jar -añadir --titulo "Desarrollador Python" --empresa Sopra --estado pendiente
+java -jar target/tracker-candidaturas.jar -añadir --titulo "Prácticas DAM" --empresa Indra --estado pendiente --fecha 15/09/2026 --enlace https://www.infojobs.net/oferta/123 --notas "Enviado por InfoJobs"
+```
+
+`--titulo`, `--empresa` y `--estado` son obligatorios. Los estados permitidos son `pendiente`, `entrevista`, `rechazado` y `aceptado`. Si no se pone `--fecha` (formato `dd/MM/yyyy`), se usa la de hoy. El ID se asigna solo.
+
+```
+Candidatura añadida con ID 16: Desarrollador Python en Sopra
+```
+
+### Ver
+
+```bash
+java -jar target/tracker-candidaturas.jar -ver 4
+```
+
+```
+ID:      4
+Título:  Desarrollador Full Stack
+Empresa: NTT Data
+Estado:  aceptado
+Fecha:   14/08/2026
+Enlace:  https://www.nttdata.com/es/empleo/full-stack
+Notas:   Empiezo en septiembre
+```
+
+### Borrar
+
+```bash
+java -jar target/tracker-candidaturas.jar -borrar 16
+```
+
+```
+Candidatura borrada: Desarrollador Python
+```
+
+### Importar
+
+```bash
+java -jar target/tracker-candidaturas.jar -importar otras-candidaturas.csv
+```
+
+Añade al final las candidaturas de otro CSV con el mismo formato y les da IDs nuevos. Las líneas que no son válidas se saltan y se indica su número.
+
+### Errores
+
+Si algo falla, el programa muestra un mensaje que empieza por `Error:` y termina con código 1. Algunos ejemplos:
+
+| Caso | Mensaje |
+|---|---|
+| Sin operación | `Falta la operación.` y la ayuda de uso |
+| Falta un parámetro obligatorio | `Error: Falta el parámetro --estado` |
+| Estado que no existe | `Error: Estado no válido: "enviado". Estados permitidos: pendiente, entrevista, rechazado, aceptado` |
+| ID que no existe | `Error: No existe ninguna candidatura con el ID 99.` |
+| ID que no es un número | `Error: El ID debe ser un número entero: abc` |
+| Archivo a importar que no existe | `Error: no se encuentra el archivo noexiste.csv` |
