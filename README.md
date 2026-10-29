@@ -139,3 +139,38 @@ Si algo falla, el programa muestra un mensaje que empieza por `Error:` y termina
 | ID que no existe | `Error: No existe ninguna candidatura con el ID 99.` |
 | ID que no es un número | `Error: El ID debe ser un número entero: abc` |
 | Archivo a importar que no existe | `Error: no se encuentra el archivo noexiste.csv` |
+
+## Diseño
+
+El [manual de estilo](docs/manual-de-estilo.pdf) recoge la identidad visual de la aplicación: logo, paleta, tipografía, guía de botones, tablas, formularios, tarjetas, navegación, iconografía, componentes y accesibilidad. Todas las pantallas del prototipo usan esos colores, estilos de texto y componentes.
+
+### Paleta de colores
+
+| Uso | Color |
+|---|---|
+| Primario | `#2B4ACB` |
+| Primario claro | `#E6EAFA` |
+| Secundario | `#0E7C86` |
+| Secundario claro | `#DDF2F3` |
+| Texto | `#1B1F2A` |
+| Texto suave | `#4A5162` |
+| Fondo | `#F5F6FA` |
+| Superficie | `#FFFFFF` |
+| Borde | `#D5D9E2` |
+
+Cada estado de una candidatura tiene su color de texto y su color de fondo:
+
+| Estado | Texto | Fondo |
+|---|---|---|
+| Pendiente | `#8A5A00` | `#FFF1CC` |
+| Entrevista | `#1D4ED8` | `#E0E8FB` |
+| Rechazado | `#B42318` | `#FDE7E5` |
+| Aceptado | `#1F7A45` | `#E3F4EA` |
+
+### Tipografía
+
+| Estilo | Fuente |
+|---|---|
+| Títulos | Lexend (Bold 30 y 22, SemiBold 16) |
+| Texto | Inter (Regular 14 y 12, SemiBold 14) |
+| IDs y fechas | JetBrains Mono (Regular 13) |
