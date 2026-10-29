@@ -140,9 +140,16 @@ Si algo falla, el programa muestra un mensaje que empieza por `Error:` y termina
 | ID que no es un número | `Error: El ID debe ser un número entero: abc` |
 | Archivo a importar que no existe | `Error: no se encuentra el archivo noexiste.csv` |
 
+## Prototipo
+
+Prototipo interactivo con 7 pantallas navegables: candidaturas, detalle, formulario, empresas, entrevistas, estadísticas y asistente IA.
+
+- [Prototipo en Figma (solo lectura)](https://www.figma.com/design/37Zy9om98P5F0cNnEkegDO/Tracker-de-Candidaturas-%E2%80%94-Prototipo-v1.0)
+- [PDF de las pantallas](doc/pantallas.pdf)
+
 ## Diseño
 
-El [manual de estilo](docs/manual-de-estilo.pdf) recoge la identidad visual de la aplicación: logo, paleta, tipografía, guía de botones, tablas, formularios, tarjetas, navegación, iconografía, componentes y accesibilidad. Todas las pantallas del prototipo usan esos colores, estilos de texto y componentes.
+El [manual de estilo](doc/Hoja%20del%20manual%20de%20estilo.pdf) recoge la identidad visual de la aplicación: logo, paleta, tipografía, guía de botones, tablas, formularios, tarjetas, navegación, iconografía, componentes y accesibilidad. Todas las pantallas del prototipo usan esos colores, estilos de texto y componentes.
 
 ### Paleta de colores
 
@@ -174,3 +181,13 @@ Cada estado de una candidatura tiene su color de texto y su color de fondo:
 | Títulos | Lexend (Bold 30 y 22, SemiBold 16) |
 | Texto | Inter (Regular 14 y 12, SemiBold 14) |
 | IDs y fechas | JetBrains Mono (Regular 13) |
+
+## Contribuciones
+
+| Miembro | Aportaciones |
+|---|---|
+| Francisco José Vela Ponce | Proyecto Maven, `enum Estado`, `record Oferta`, interfaz `RepositorioOfertas`, lectura y escritura del CSV (`RepositorioOfertasArchivo`) y sus tests. README: descripción, tecnologías y datos de prueba. PDF de las pantallas y enlace al prototipo de Figma. Tabla de contribuciones y checklist |
+| Alejandro López García | `OfertaService` y sus tests, `Cli`, `Main`, `candidaturas.csv`, `AGENTS.md` y `planning.md`. README: compilación, ejecución y uso de cada comando. Manual de estilo en PDF y apartado de diseño. Organización de los PDF en `doc` |
+| Los dos | Prototipo de Figma y manual de estilo, revisión del código y vídeo de demostración |
+
+Hemos usado IA (Claude) como ayuda durante el proyecto. Las reglas que le dimos están en [`AGENTS.md`](AGENTS.md) y los prompts, en el registro de [`planning.md`](planning.md).

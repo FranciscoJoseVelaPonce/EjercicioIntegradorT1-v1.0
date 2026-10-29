@@ -16,7 +16,7 @@
 - [x] **Archivo de datos estropeado:** si `candidaturas.csv` tiene líneas mal, el programa avisa y no guarda nada, para no perder datos.
 - [x] **Letra `ñ` en `-añadir`:** funciona en Windows; se acepta también `-anadir`.
 - [x] **Comentarios:** solo Javadoc en clases y métodos públicos.
-- [ ] **Flujo de Git:** (elegir uno y mantenerlo) commits directos a `main` / ramas por funcionalidad con merge.
+- [x] **Flujo de Git:** commits directos a `main`, cada uno desde su ordenador y con su cuenta.
 
 ## 2. Plan de trabajo
 
@@ -39,17 +39,17 @@
 
 ### 2.2 Diseño (Desarrollo de Interfaces)
 
-- [ ] Prototipo interactivo en Figma con navegación entre pantallas:
-  - [ ] Listado de candidaturas con filtros
-  - [ ] Detalle de una candidatura (empresa, entrevistas, notas)
-  - [ ] Formulario de alta/edición de candidatura
-  - [ ] Gestión de empresas (listado + formulario)
-  - [ ] Gestión de entrevistas
-  - [ ] Panel de estadísticas (v3.0)
-  - [ ] Asistente IA (v3.0)
-- [ ] Manual de estilo: paleta, tipografía, logo, guía de estilo y componentes
-- [ ] Revisar contraste y accesibilidad
-- [ ] PDF de las pantallas y PDF del manual
+- [x] Prototipo interactivo en Figma con navegación entre pantallas:
+  - [x] Listado de candidaturas con filtros
+  - [x] Detalle de una candidatura (empresa, entrevistas, notas)
+  - [x] Formulario de alta/edición de candidatura
+  - [x] Gestión de empresas (listado + formulario)
+  - [x] Gestión de entrevistas
+  - [x] Panel de estadísticas (v3.0)
+  - [x] Asistente IA (v3.0)
+- [x] Manual de estilo: paleta, tipografía, logo, guía de estilo y componentes
+- [x] Revisar contraste y accesibilidad
+- [x] PDF de las pantallas y PDF del manual
 
 ### 2.3 Datos de prueba
 
@@ -78,16 +78,19 @@ Cada miembro debe tener al menos 5 commits con aportaciones sustanciales.
 | 28/10/2026 | Francisco José | Claude (Claude Code) | Implementar la v1.0 por capas (modelo, repositorio, servicio, cli) con los comandos del enunciado | Código y tests. Revisados y probados con `mvn package` y ejecutando cada comando |
 | 28/10/2026 | Francisco José | Claude (Claude Code) | Genera un archivo CSV con 15 registros de candidaturas laborales para una aplicación de seguimiento de empleo. El CSV debe tener las siguientes columnas separadas por punto y coma: id;titulo;empresa;estado;fechaPostulacion;enlace;notas. Los estados posibles son: pendiente, entrevista, rechazado, aceptado. Incluye al menos 4 empresas diferentes y al menos 3 ofertas en cada estado. Las fechas deben estar en formato dd/MM/yyyy y abarcar los últimos 3 meses. Devuelve solo el CSV, sin explicaciones. | `candidaturas.csv`. Se comprobó que cumple las condiciones |
 | 28/10/2026 | Francisco José | Claude (Claude Code) | Prototipo en Figma con las pantallas del enunciado y manual de estilo | Archivo de Figma del Tracker |
-| | | | | |
+| 29/10/2026 | Francisco José | Claude (Claude Code) | Guion de los commits de la v1.0, con el reparto entre los dos y el título y la descripción de cada uno | `COMMITS-v1.0.md`. Cada uno ha hecho sus commits desde su cuenta |
+| 29/10/2026 | Francisco José | Claude (Claude Code) | Prepara el README: descripción, tecnologías, datos de prueba, cómo compilar y ejecutar con un ejemplo de cada comando y los errores | Apartados del README. Las salidas de ejemplo se comprobaron ejecutando cada comando |
+| 29/10/2026 | Francisco José | Claude (Claude Code) | Apartado de diseño del README con la paleta y las tipografías del Figma | Apartado «Diseño», con los colores y las fuentes sacados de las variables y los estilos del Figma |
+| 29/10/2026 | Francisco José | Claude (Claude Code) | Tabla de contribuciones y checklist de la entrega | Apartado «Contribuciones» del README y checklist de este archivo, revisados con el historial de commits |
 
 ## 5. Checklist de entrega v1.0
 
-- [ ] Repositorio **público** en GitHub, con los dos como colaboradores
+- [x] Repositorio **público** en GitHub, con los dos como colaboradores
 - [ ] Tag `v1.0` en `main`
-- [ ] PDF con las pantallas del prototipo
-- [ ] PDF del manual de estilo
+- [x] PDF con las pantallas del prototipo
+- [x] PDF del manual de estilo
 - [ ] Vídeo de 5 a 10 minutos con los dos (prototipo navegable + comandos)
-- [ ] README con descripción, tecnologías, instrucciones, tabla de contribuciones, enlace al CSV y enlace a Figma de solo lectura
+- [x] README con descripción, tecnologías, instrucciones, tabla de contribuciones, enlace al CSV y enlace a Figma de solo lectura
 - [x] `AGENTS.md` y `planning.md` en el repositorio
-- [ ] Nombres de los dos en todos los documentos
-- [ ] Al menos 5 commits de cada miembro
+- [x] Nombres de los dos en todos los documentos
+- [x] Al menos 5 commits de cada miembro
